@@ -1,0 +1,22 @@
+.header__title {
+  font-weight: 300;
+  font-size: 4em;
+  margin: 0.5em 0.25em;
+}
+
+.hero {
+  width: 50%;
+}
+
+.top-news {
+  width: 50%;
+  height: 300px; /* to match the height of image */
+}
+
+.scores {
+  width: 60%;
+}
+
+.weather {
+  width: 40%;
+}

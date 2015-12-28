@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Brighton Times</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="main-small.css">
+    <link rel="stylesheet" media="screen and (min-width:701px) and (max-width:1000px)" type="text/css" href="main-medium.css">
+    <link rel="stylesheet" media="screen and (min-width:1001px) and (max-width:1300px)"type="text/css" href="main-large.css">
+    <link rel="stylesheet" media="screen and (min-width:1301px)"type="text/css" href="main-extra-large.css">
+
   </head>
   <body>
 
@@ -16,6 +20,9 @@
         <h1 class="header__title">
           The Brighton Times
         </h1>
+        <h1 id="menu" class="nav_menu">
+           &#9776;
+         </h1>
       </div>
     </header>
 
@@ -30,6 +37,7 @@
 
     <main>
       <section class="content">
+        <div class="container">
         <section class="hero">
           <article class="description">
             <h2>Absolutely astonishing breaking news!</h2>
@@ -54,6 +62,7 @@
             </li>
           </ul>
         </section>
+      </div>
 
         <section class="scores">
           <table class="scores__table">
@@ -178,5 +187,22 @@
         </ul>
       </footer>
     </main>
+    <script>
+      /*
+       * Open the drawer when the menu ison is clicked.
+       */
+      var menu = document.querySelector('#menu');
+      var main = document.querySelector('main');
+      var drawer = document.querySelector('.nav');
+
+      menu.addEventListener('click', function(e) {
+        drawer.classList.toggle('open');
+        e.stopPropagation();
+      });
+      main.addEventListener('click', function() {
+        drawer.classList.remove('open');
+      });
+
+    </script>
   </body>
 </html>
