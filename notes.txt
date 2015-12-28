@@ -1,0 +1,22 @@
+Lesson 3 Notes
+
+linking a stylesheet with media
+<link rel="stylesheet" media="screen and (min-width:500px)" href="over500.css">
+(many small http requests)
+
+embed stylesheet with media
+@media screen ad (min-width:500px){
+  body {background-color: green;}
+}
+(few big http requests)
+
+import style sheet (avoid for performance reasons)
+@import url("no.css") only screen and (min-width:500px);
+
+min-width = size of browser window
+min-device-width = size of screen
+
+grid-fluid system: columns wrap around to next line as browser width gets smaller
+bootstrap, 960pixel grid system
+
+flexbox! tool for grid based system
