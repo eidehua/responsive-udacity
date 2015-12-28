@@ -1,3 +1,6 @@
+/* main-small.css is the default css */
+/* all other css files with media queries are modifications of this css */
+
 img, embed, object, video{
   max-width: 100%;
 }
@@ -29,7 +32,6 @@ ul {
   margin: 0;
 }
 
-
 /*
  *
  * Common
@@ -51,6 +53,9 @@ ul {
  */
 
 .header {
+  /* this should be higher than the nav index,
+  so transition of nav bar in doesn't cover the title */
+  z-index: 12;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   min-height: 56px;
   transition: min-height 0.3s;
@@ -67,15 +72,18 @@ ul {
   margin-right: 1em;
   vertical-align: top;
   margin-top: 12px;
+  width: 72px;
 }
 
 .header__title {
   font-weight: 300;
-  font-size: 4em;
-  margin: 0.5em 0.25em;
+  font-size: 1.8em;
+  margin: 1.4em 0.25em;
   display: inline-block;
   color: #212121;
+  width: 60%;
 }
+
 
 
 /*
@@ -84,10 +92,60 @@ ul {
  *
  */
 
-.nav {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+ .nav {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ .nav__item {
+   box-sizing: border-box;
+   display: inline-block;
+   width: 24%;
+   text-align: center;
+   line-height: 24px;
+   padding: 24px;
+   text-transform: uppercase;
+ }
+
+ .nav_menu {
+   display: none;
+ }
+
+ /* specifically for small screen sizes */
+@media screen and (max-width:700px) {
+  .nav {
+    z-index: 10;
+    background-color: #fff;
+    width: 100%;
+    position: absolute;
+    /* This trasform moves the drawer off canvas. */
+    -webkit-transform: translate(0, -500px);
+    transform: translate(0, -500px);
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+  }
+  .nav.open {
+    -webkit-transform: translate(0, 0px);
+    transform: translate(0, 0px);
+  }
+  .nav__item {
+    box-sizing: border-box;
+    display: inline-block;
+    border-bottom: 1px solid #E0E0E0;
+    width: 100%;
+    text-align: center;
+    line-height: 24px;
+    padding: 24px;
+    text-transform: uppercase;
+  }
+  /* the hamburger menu */
+  .nav_menu {
+    padding: 1em;
+    display: inline-block;
+    position: absolute;;
+    right: 0;
+  }
 }
 
 .nav__list {
@@ -96,15 +154,6 @@ ul {
   margin: 0;
 }
 
-.nav__item {
-  box-sizing: border-box;
-  display: inline-block;
-  width: 24%;
-  text-align: center;
-  line-height: 24px;
-  padding: 24px;
-  text-transform: uppercase;
-}
 
 .nav a {
   text-decoration: none;
@@ -127,9 +176,6 @@ ul {
 
 main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /*
@@ -138,7 +184,16 @@ main {
  *
  */
 
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width:100%;
+}
 /*
  *
  * Hero
@@ -174,7 +229,7 @@ main {
 
 .top-news {
   width: 100%;
-  height: 300px;
+  height: 100%;
   border-bottom: 1px solid #E0E0E0;
   padding: 1em;
 }

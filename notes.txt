@@ -19,4 +19,14 @@ min-device-width = size of screen
 grid-fluid system: columns wrap around to next line as browser width gets smaller
 bootstrap, 960pixel grid system
 
-flexbox! tool for grid based system
+flexbox! tool for grid based system. Allows easily having multiple items/blocks in a row
+
+Responsive at large screen sizes: adding margins, keeping content centered
+@media screen and (min-width: 700px){
+    .container{
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+}

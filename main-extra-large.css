@@ -1,0 +1,42 @@
+body, html {
+  width: 1301px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header__title {
+  font-weight: 300;
+  font-size: 4em;
+  margin: 0.5em 0.25em;
+}
+
+/* contains hero and top-news section. on large want it in a column */
+.container {
+ width: 50%;
+ order: 0;
+}
+.hero {
+  width: 100%;
+  order: 0;
+}
+
+.top-news {
+  width: 100%;
+  order: 1;
+  height: 100%;
+}
+
+.scores {
+  width: 50%;
+  order: 2;
+}
+
+.weather {
+  width: 50%;
+  order: 3;
+}
+
+.recent-news {
+  width: 50%;
+  order: 1;
+}
