@@ -31,7 +31,18 @@ ul {
   padding: 0;
   margin: 0;
 }
-
+h2{
+  font-size: 14px;
+}
+/* increase font size, minor break point */
+@media screen and (min-width:500px){
+  p {
+    font-size: 14px;
+  }
+  h2{
+    font-size: 18px;
+  }
+}
 /*
  *
  * Common
@@ -142,6 +153,7 @@ ul {
   /* the hamburger menu */
   .nav_menu {
     padding: 1em;
+    padding-right: .5em;
     display: inline-block;
     position: absolute;;
     right: 0;
@@ -282,10 +294,19 @@ main {
   width: 100%;
   border-collapse: collapse;
 }
+@media screen and (min-width: 501px){
+  .scores__table th,
+  .scores__table td {
+    padding: 1em;
+  }
+  .scores__table td:nth-child(3) {
+    text-align: right;
+  }
 
-.scores__table th,
-.scores__table td {
-  padding: 1em;
+  .scores__table td:nth-child(2),
+  .scores__table td:nth-child(5) {
+    text-align: center;
+  }
 }
 
 .scores__table th {
@@ -304,15 +325,6 @@ main {
 
 .scores__table td.winner {
   font-weight: bold;
-}
-
-.scores__table td:nth-child(3) {
-  text-align: right;
-}
-
-.scores__table td:nth-child(2),
-.scores__table td:nth-child(5) {
-  text-align: center;
 }
 
 /*
@@ -430,4 +442,34 @@ footer a {
   text-decoration: none;
   color: #333;
   padding: 1.5em;
+}
+
+table {
+  border: 1px solid #ddd;
+}
+tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+/* Minor Break point */
+@media screen and (max-width: 500px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  td {
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    left: 6px;
+    content: attr(data-th);
+    font-weight: bold;
+  }
+
 }
